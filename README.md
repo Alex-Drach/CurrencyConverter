@@ -4,7 +4,7 @@
 ![alt text](Presentation.gif)
 
 # Swift 5
-## MVVM
+## MVVM,
 ## UIKit, 
 ## CoreData, 
 ## Codable, 
