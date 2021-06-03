@@ -1,4 +1,4 @@
 
 ## Currency Converter - iOS Application
 
-![alt text](Gif.gif)
+![alt text](Presentation.gif)
