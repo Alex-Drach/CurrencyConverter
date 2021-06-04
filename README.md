@@ -10,6 +10,7 @@
 ## Codable, 
 ## JSON,
 ## Animation, 
+## GCD,
 ## Networking, 
 ## Delegation.
 
