@@ -32,7 +32,7 @@ class CreateContentCell: UITableViewCell {
     
     // - MARK: Actions
     
-    /// Set cell view from a currency content.
+    /// Sets cell view from a currency content.
     /// - Parameters:
     ///     - content: - Indicates a new Currency object.
     public func setView(from content: Currency) {

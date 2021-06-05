@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Displays different data content in a UITableView.
+/// Displays different data content in UITableView.
 class CurrencyViewController: UIViewController {
     
     // - MARK: Properties
@@ -39,7 +39,9 @@ class CurrencyViewController: UIViewController {
         }
     }
     
-    /// Set a presenting view controller content according to the PresentationStates.
+    /// Sets a presenting ViewController content according to the viewState.
+    /// - Parameters:
+    ///     - data: - It's value of a chosen currency.
     private func setPresenterContent(from data: Currency) {
         guard let navigator = presentingViewController as? UINavigationController,
               let presenter = navigator.topViewController as? ConvertViewController
@@ -87,7 +89,7 @@ class CurrencyViewController: UIViewController {
         }
     }
     
-    /// Dismissing the CurrencyViewController.
+    /// Dismiss the CurrencyViewController.
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -97,21 +99,17 @@ class CurrencyViewController: UIViewController {
 // - MARK: TableViewOperatorDelegate
 extension CurrencyViewController: TableViewOperatorDelegate {
    
-    /// When data selected.
+    // When data selected.
     func tableOperator(_ tableOperator: TableViewOperator, selectedRowAt index: IndexPath) {
         guard let data = tableOperator.data?[index.row] as? Currency else { return }
         setPresenterContent(from: data)
     }
-    
-    /// When data Updated.
+    // When data Updated.
     func tableOperator(_ tableOperator: TableViewOperator, didUpdateData data: [Any]) {
         guard let updatedData = data as? [Item] else { return }
         if updatedData.isEmpty {
             dismiss(animated: true)
         }
-        
     }
-    
-    
     
 }

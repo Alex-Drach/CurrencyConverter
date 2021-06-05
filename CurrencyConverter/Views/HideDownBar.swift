@@ -32,7 +32,7 @@ class HideDownBar: UIToolbar {
    
     // - MARK: Private Actions
     
-    /// Set bar's properties.
+    /// Sets bar's properties.
     private func setToolbar() {
         setHide()
         guard let hideButton = hide else { return }
@@ -46,7 +46,7 @@ class HideDownBar: UIToolbar {
         self.setItems([flexibleSpace, hideDown, flexibleSpace], animated: true)
     }
     
-    /// Set the bar's hide button.
+    /// Sets the bar's hide button.
     private func setHide() {
         hide = UIButton()
         if UIDevice.current.userInterfaceIdiom == .pad{
@@ -61,7 +61,7 @@ class HideDownBar: UIToolbar {
         hide?.addTarget(self, action: #selector(dragDown), for: .touchDown)
     }
     
-    /// Hides a keyboard on dragDown.
+    /// Hides the bar keyboard on dragDown.
     @objc private func dragDown() {
         hideAction()
     }

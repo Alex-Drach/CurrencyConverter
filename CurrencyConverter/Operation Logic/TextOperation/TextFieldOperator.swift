@@ -19,8 +19,8 @@ class TextFieldOperator: NSObject {
     
     /// Initializes the TextFieldOperator components.
     /// - Parameters:
-    ///     - textField: - UITextField - where a user types a currency amount to convert.
-    /// - Returns: - A new TextFieldOperator object to perform defined entering text actions.
+    ///     - textField: - UITextField - where a user types text.
+    /// - Returns: - A new TextFieldOperator object to perform defined typing text actions.
     init(_ textField: UITextField) {
         self.textField = textField
         super.init()
@@ -60,7 +60,7 @@ class TextFieldOperator: NSObject {
 // - MARK: TextFieldDelegate
 extension TextFieldOperator: UITextFieldDelegate {
     
-    /// When a user types text, the entered text must fit to the app needs.
+    // When a user types text, the entered text must fit to the app needs.
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         /// Indicates text components separated by a character.
         guard let components = textField.text?.components(separatedBy: ".").count else { return false}
@@ -106,8 +106,8 @@ extension TextFieldOperator: UITextFieldDelegate {
     
     /// Checks for restricted characters, which are '0' and '.', without any other chars entered.
     /// - Parameters:
-    ///     - text: - Indicates a string, to look for restricted chars.
-    /// - Returns: - A bool value, tells whether the restricted chars exist.
+    ///     - text: - Indicates a string, to look for restricted characters.
+    /// - Returns: - A bool value telling whether restricted characters exist.
     private func restrictedChar(in text: String) -> Bool {
         var indicator = true
         for char in text where char != "0" && char != "." {
@@ -116,7 +116,7 @@ extension TextFieldOperator: UITextFieldDelegate {
         return indicator
     }
     
-    /// Correctes characters in text.
+    /// Corrects characters in text.
     /// - Parameters:
     ///     - text: - Indicates a string with text to be changed.
     /// - Returns: - String representation of corrected text.

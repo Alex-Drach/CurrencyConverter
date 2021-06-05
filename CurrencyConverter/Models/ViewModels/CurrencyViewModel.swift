@@ -38,7 +38,7 @@ final class CurrencyViewModel {
     
     // - MARK: Actions
     
-    /// Delete data from the CoreData store.
+    /// Deletes data from the CoreData store.
     /// - Parameters:
     ///     - index: - Indicates an index of the deleting Item.
     func deleteData(at index: Int) {

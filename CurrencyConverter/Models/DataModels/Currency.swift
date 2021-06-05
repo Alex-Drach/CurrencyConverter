@@ -31,7 +31,7 @@ struct Currency: Decodable {
 // - MARK: Comparable
 extension Currency: Comparable {
     
-    /// Hash comparing helps automatically to sort an unsorted currency array.
+    // Hash comparing, helps automatically to sort unsorted currency array.
     static func < (lhs: Currency, rhs: Currency) -> Bool {
         return lhs.name < rhs.name
     }

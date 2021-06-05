@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Indicates different ViewModel presentation states to display different data content in the same view.
+/// Indicates different ViewModel presentation states to display different data content in a same view.
 enum PresentationStates: Equatable {
     
     /// Defines content creation for a presented view.

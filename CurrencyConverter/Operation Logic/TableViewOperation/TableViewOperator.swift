@@ -5,17 +5,16 @@
 //  Created by Alex on 07.05.2021.
 //  Copyright © 2021 Alex Drach. All rights reserved.
 
-import Foundation
 import UIKit
 
 /// Operates UITableView Actions.
 class TableViewOperator: NSObject {
     
     // - MARK: Properties
-    private let numberOfSections: Int = 1
-    private var tableView: UITableView
-    private var state: PresentationStates
-    private var search: UISearchBar
+    let numberOfSections: Int = 1
+    var tableView: UITableView
+    var state: PresentationStates
+    var search: UISearchBar
     weak var delegate: TableViewOperatorDelegate?
     
     /// Presents already chosen code value.
@@ -46,17 +45,17 @@ class TableViewOperator: NSObject {
     }
     
     // - MARK: Private Actions
-    /// Set viewModel & get data for UITableView presentation.
+    /// Sets viewModel & get data for UITableView presentation.
     private func setData() {
         viewModel = CurrencyViewModel(with: state)
         data = viewModel?.data
     }
-    /// Set UITableView delegates.
+    /// Sets UITableView delegates.
     private func setTableDelegates() {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    /// Set search operator.
+    /// Sets search operator.
     private func setSearch() {
         guard let searchData = viewModel?.data else { return }
         searchOperator = SearchOperator(search, searchData: searchData , for: state)
@@ -83,7 +82,7 @@ class TableViewOperator: NSObject {
     }
     
     /// Returns cell for row at indexPath.
-    private func cell(forRowAt indexPath: IndexPath) -> UITableViewCell {
+    func cell(forRowAt indexPath: IndexPath) -> UITableViewCell {
         switch state {
         
         case .createContent(.first), .createContent(.second):
@@ -107,48 +106,4 @@ class TableViewOperator: NSObject {
         }
     }
     
-}
-// - MARK: UITableViewDelegate && Source ))
-extension TableViewOperator: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return numberOfSections
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data?.count ?? 0
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cell(forRowAt: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? CreateContentCell else { return }
-        
-        if state == .createContent(.first) && restrictedCode != cell.code {
-            self.delegate?.tableOperator(self, selectedRowAt: indexPath)
-        }
-        else if state == .createContent(.second) && restrictedCode != cell.code {
-            self.delegate?.tableOperator(self, selectedRowAt: indexPath)
-        }
-        else if restrictedCode == cell.code {
-            cell.shake()
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height: CGFloat = deviceState == .pad ? 120 : 80
-        return height
-    }
-    
-}
-// - MARK: SearchOperatorDelegate
-extension TableViewOperator: SearchOperatorDelegate {
-    
-    func searchOperator(_ searchOperator: SearchOperator, didSearchIn sequence: [Any]) {
-        DispatchQueue.main.async { [self] in
-        data = sequence
-        tableView.reloadData()
-        }
-    }
 }

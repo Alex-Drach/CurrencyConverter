@@ -22,7 +22,7 @@ class SavedContentCell: UITableViewCell {
     
     // - MARK: Actions
     
-    /// Set cell view from a savedContent.
+    /// Sets cell view from a savedContent.
     /// - Parameters:
     ///     - savedContent: - Indicates CoreData saved Item.
     func setView(from savedContent: Item) {

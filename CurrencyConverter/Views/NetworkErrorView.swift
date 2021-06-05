@@ -48,7 +48,7 @@ class NetworkErrorView: UIView {
     
     // - MARK: Private Actions
     
-    /// Set the View
+    /// Sets the View
     private func setView() {
         self.backgroundColor = .clear
         setError()
@@ -56,7 +56,7 @@ class NetworkErrorView: UIView {
         setTimer()
     }
     
-    /// Set UILabel for error text.
+    /// Sets UILabel for text.
     private func setLable() {
         let lable = UILabel()
         lable.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
@@ -73,7 +73,7 @@ class NetworkErrorView: UIView {
         self.addSubview(lable)
     }
     
-    /// Set the error message according to the view state.
+    /// Sets the error message according to the view state.
     private func setError() {
         switch state {
         case .connection:
@@ -88,7 +88,7 @@ class NetworkErrorView: UIView {
         }
     }
     
-    /// Set a timer to performe #selector action.
+    /// Sets a timer to performe #selector action.
     private func setTimer() {
         Timer.scheduledTimer(timeInterval: 1.3, target: self, selector: #selector(fadeAwayAction), userInfo: nil, repeats: false)
     }
@@ -102,9 +102,6 @@ class NetworkErrorView: UIView {
                 self.removeFromSuperview()
             }
         }
-        
     }
     
 }
-
-

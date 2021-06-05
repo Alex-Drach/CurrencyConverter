@@ -10,6 +10,7 @@ import UIKit
 /// Takes a responsibility to search data in collections.
 class SearchOperator: NSObject {
     
+    // - MARK: Properties
     weak var delegate: SearchOperatorDelegate?
     private var searchBar: UISearchBar
     private var state: PresentationStates
@@ -19,7 +20,7 @@ class SearchOperator: NSObject {
     /// - Parameters:
     ///     - search: - UISearchBar - where a user types text.
     ///     - searchData: - Indicates an array of data.
-    ///     - state: - Presentation state, according to what the SearchOperator must search.
+    ///     - state: - Presentation state, according to what the SearchOperator must search data.
     /// - Returns: - A new SearchOperator object to perform defined search actions.
     init(_ search: UISearchBar, searchData: [Any], for state: PresentationStates) {
         self.searchData = searchData
@@ -44,7 +45,7 @@ class SearchOperator: NSObject {
         self.delegate?.searchOperator(self, didSearchIn: searchData)
     }
     
-    /// Filter search data by name and code.
+    /// Filters search data by name and code.
     /// - Parameters:
     ///     - searchText: - Indicates a search text entered by a user.
     private func dataFilter(by searchText: String) {

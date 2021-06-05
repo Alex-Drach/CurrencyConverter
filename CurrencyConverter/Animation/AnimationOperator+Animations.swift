@@ -19,14 +19,16 @@ extension AnimationOperator {
     }
     /// Stops connection animation with bool value.
     /// - Parameters:
-    ///     - success: - It's bool value: if 'true' will be done pulsate animation action.
+    ///     - success: - It's bool value: if 'true' will be done animation actions.
     public func stopConnectionAnimation(success: Bool) {
         animationView.isHidden = true
         animationView.stopAnimating()
         activityIndicator.stopAnimating()
         if success {
             firstButton.pulsate()
+            firstCode.pulsate()
             secondButton.pulsate()
+            secondCode.pulsate()
         }
     }
     

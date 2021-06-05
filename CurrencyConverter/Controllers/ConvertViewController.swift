@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Presents the currency conversion interface.
+/// Presents currency conversion interface.
 class ConvertViewController: UIViewController {
     
     // - MARK: Properties
@@ -80,11 +80,11 @@ class ConvertViewController: UIViewController {
         networkOperator?.delegate = self
     }
     
-    /// Reversing converted currencies clockwise.
+    /// Reverses converted currencies clockwise.
     @IBAction private func reverseCurrency(_ sender: UIButton) {
         animationOperator?.reverse()
     }
-    /// Converting chosen currencies.
+    /// Convertes chosen currencies.
     @IBAction private func convertCurrency(_ sender: UIButton) {
         result.text = ""
         amount.endEditing(true)
@@ -96,7 +96,7 @@ class ConvertViewController: UIViewController {
         }
     }
     
-    /// Presenting saved or loaded data.
+    /// Presents saved or loaded data.
     @IBAction private func presentData(_ sender: UIButton) {
         amount.endEditing(true)
         guard let animationOperator = self.animationOperator else { return }
@@ -106,7 +106,7 @@ class ConvertViewController: UIViewController {
         else { performSegue(withIdentifier: "presentData", sender: sender) }
     }
     
-    /// Presents a NetworkErrorView in the ViewController.
+    /// Presents a NetworkErrorView in the ViewController's view.
     /// - Parameters:
     ///     - state: - Indicates NetworkErrorView state.
     private func presentError(state: NetworkErrorView.State) {
@@ -119,7 +119,7 @@ class ConvertViewController: UIViewController {
 
 // - MARK: NetworkOperatorDelegate
 extension ConvertViewController: NetworkOperatorDelegate {
-    /// When the networkOperator changes it's state.
+    
     func networkOperator(_ networkOperator: NetworkOperator, didChangeState state: NetworkOperator.States) {
         DispatchQueue.main.async { [self] in
             

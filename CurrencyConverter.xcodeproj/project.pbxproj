@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0B2ADB266BD3240076B726 /* TableOperator+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B2ADA266BD3240076B726 /* TableOperator+Delegates.swift */; };
+		FA0B2AE0266BD8F00076B726 /* NetworkOperator+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B2ADF266BD8F00076B726 /* NetworkOperator+Helpers.swift */; };
 		FA0EFDB1264EE07D00ADE22E /* AnimationOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EFDB0264EE07D00ADE22E /* AnimationOperator.swift */; };
 		FA0EFDB6264F030000ADE22E /* UIViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EFDB5264F030000ADE22E /* UIViewAnimations.swift */; };
 		FA31703226516183003F297C /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA31703126516183003F297C /* CurrentDate.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0B2ADA266BD3240076B726 /* TableOperator+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableOperator+Delegates.swift"; sourceTree = "<group>"; };
+		FA0B2ADF266BD8F00076B726 /* NetworkOperator+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkOperator+Helpers.swift"; sourceTree = "<group>"; };
 		FA0EFDB0264EE07D00ADE22E /* AnimationOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationOperator.swift; sourceTree = "<group>"; };
 		FA0EFDB5264F030000ADE22E /* UIViewAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnimations.swift; sourceTree = "<group>"; };
 		FA31703126516183003F297C /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				FA45C40326450E2F0052CC11 /* NetworkOperator.swift */,
+				FA0B2ADF266BD8F00076B726 /* NetworkOperator+Helpers.swift */,
 				FA6486E72668C76E00B9B928 /* Protocols */,
 			);
 			path = "Network Services";
@@ -230,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				FA45C412264560B80052CC11 /* TableViewOperator.swift */,
+				FA0B2ADA266BD3240076B726 /* TableOperator+Delegates.swift */,
 				FA6486EE2668C7FA00B9B928 /* Protocols */,
 			);
 			path = TableViewOperation;
@@ -395,7 +401,9 @@
 				FA4DFFC5262D4B72005360C3 /* AppDelegate.swift in Sources */,
 				FA45C40A264512000052CC11 /* TextFieldOperator.swift in Sources */,
 				FA45C413264560B80052CC11 /* TableViewOperator.swift in Sources */,
+				FA0B2AE0266BD8F00076B726 /* NetworkOperator+Helpers.swift in Sources */,
 				FA957A632633457B00C90E78 /* CurrencyViewModel.swift in Sources */,
+				FA0B2ADB266BD3240076B726 /* TableOperator+Delegates.swift in Sources */,
 				FAFAB92A265AF4F600FD7E10 /* HideDownBar.swift in Sources */,
 				FAB1422E2651B5E2002EB0AD /* Item+CoreDataProperties.swift in Sources */,
 				FA6C3DC0264348DF001CEDC7 /* SearchOperatorDelegate.swift in Sources */,
