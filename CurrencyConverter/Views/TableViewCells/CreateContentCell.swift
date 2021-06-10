@@ -42,4 +42,11 @@ class CreateContentCell: UITableViewCell {
         self.selectedBackgroundView = selectedView
     }
     
+    /// When selcted...
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        let blueClear = UIColor(red: 0, green: 0.9914394021, blue: 1, alpha: 0.388666524)
+        /// The cell view selection style.
+        self.selectedBackgroundView?.backgroundColor = selected != !selected ? blueClear : .clear
+    }
 }

@@ -24,12 +24,12 @@ class TextFieldOperator: NSObject {
     init(_ textField: UITextField) {
         self.textField = textField
         super.init()
-        setupTextField()
+        setTextField()
     }
     
     // - MARK: Private Actions
     
-    private func setupTextField() {
+    private func setTextField() {
         textField.delegate = self
         setPlaceholder()
         setToolbar()
@@ -101,7 +101,6 @@ extension TextFieldOperator: UITextFieldDelegate {
         }
     }
     
-    
 // - MARK: TextFieldDelegate+Helpers
     
     /// Checks for restricted characters, which are '0' and '.', without any other chars entered.
@@ -140,5 +139,4 @@ extension TextFieldOperator: UITextFieldDelegate {
         }
         return string
     }
-    
 }

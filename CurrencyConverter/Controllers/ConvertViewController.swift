@@ -106,7 +106,7 @@ class ConvertViewController: UIViewController {
         else { performSegue(withIdentifier: "presentData", sender: sender) }
     }
     
-    /// Presents a NetworkErrorView in the ViewController's view.
+    /// Presents an error in the ViewController's view.
     /// - Parameters:
     ///     - state: - Indicates NetworkErrorView state.
     private func presentError(state: NetworkErrorView.State) {

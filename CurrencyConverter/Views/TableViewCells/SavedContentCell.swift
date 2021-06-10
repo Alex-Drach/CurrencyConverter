@@ -34,12 +34,4 @@ class SavedContentCell: UITableViewCell {
         convertedAmount.text = savedContent.amount
     }
     
-    /// When selcted...
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        /// The cell view selection style.
-        self.selectedBackgroundView?.backgroundColor = selected != !selected ? #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.4411386986) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-    }
-
 }

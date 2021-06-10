@@ -12,7 +12,6 @@ class CurrencyViewController: UIViewController {
     
     // - MARK: Properties
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-    
     @IBOutlet weak var currencyTableView: UITableView!
     @IBOutlet weak var currecnySearch: UISearchBar!
     
