@@ -6,6 +6,7 @@
 //  Copyright © 2021 Alex Drach. All rights reserved.
 
 import UIKit
+import Foundation
 
 /// Operates networking processes.
 class NetworkOperator: NSObject {
@@ -42,12 +43,17 @@ class NetworkOperator: NSObject {
     // - MARK: Private Actions
     
     /// Makes HTTP request.
-    private func makeRequest(){
+    private func makeRequest() {
+        // to make request in a queue
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        
         guard let url = url() else { return }
+        
         delegate?.networkOperator(self, didChangeState: .beganConnecting)
         
-        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) -> Void in
-            guard let self = self else{ return }
+        let operation = NetworkOperation(session: URLSession.shared, URL: url, completionHandler: { [weak self] (data, response, error) in
+            guard let self = self else{return}
             
             if let data = data {
                 // work with data
@@ -62,7 +68,10 @@ class NetworkOperator: NSObject {
                 self.delegate?.networkOperator(self, didChangeState: .connectionError)
                 print("\(error.localizedDescription)!")
             }
-        }.resume()
+        })
+        queue.addOperation(operation)
+        
     }
     
 }
+

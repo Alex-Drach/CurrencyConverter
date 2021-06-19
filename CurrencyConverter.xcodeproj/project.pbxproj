@@ -30,6 +30,7 @@
 		FA8BD0E5264DC41D009C0772 /* NetworkOperatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BD0E4264DC41D009C0772 /* NetworkOperatorDelegate.swift */; };
 		FA957A632633457B00C90E78 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA957A622633457B00C90E78 /* CurrencyViewModel.swift */; };
 		FA957A662633479200C90E78 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA957A652633479200C90E78 /* Currency.swift */; };
+		FAA0FBAF267E437C00309F09 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0FBAE267E437C00309F09 /* NetworkOperation.swift */; };
 		FAAF5D1E26531CA600D2EF00 /* CoreDataOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF5D1D26531CA600D2EF00 /* CoreDataOperator.swift */; };
 		FAB142292651B4BB002EB0AD /* SavedDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAB142272651B4BB002EB0AD /* SavedDataModel.xcdatamodeld */; };
 		FAB1422D2651B5E2002EB0AD /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1422B2651B5E2002EB0AD /* Item+CoreDataClass.swift */; };
@@ -67,6 +68,7 @@
 		FA8BD0E4264DC41D009C0772 /* NetworkOperatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperatorDelegate.swift; sourceTree = "<group>"; };
 		FA957A622633457B00C90E78 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		FA957A652633479200C90E78 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		FAA0FBAE267E437C00309F09 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		FAAF5D1D26531CA600D2EF00 /* CoreDataOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataOperator.swift; sourceTree = "<group>"; };
 		FAB142282651B4BB002EB0AD /* SavedDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedDataModel.xcdatamodel; sourceTree = "<group>"; };
 		FAB1422B2651B5E2002EB0AD /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				FA45C40326450E2F0052CC11 /* NetworkOperator.swift */,
 				FA0B2ADF266BD8F00076B726 /* NetworkOperator+Helpers.swift */,
+				FAA0FBAE267E437C00309F09 /* NetworkOperation.swift */,
 				FA6486E72668C76E00B9B928 /* Protocols */,
 			);
 			path = "Network Services";
@@ -403,6 +406,7 @@
 				FA45C413264560B80052CC11 /* TableViewOperator.swift in Sources */,
 				FA0B2AE0266BD8F00076B726 /* NetworkOperator+Helpers.swift in Sources */,
 				FA957A632633457B00C90E78 /* CurrencyViewModel.swift in Sources */,
+				FAA0FBAF267E437C00309F09 /* NetworkOperation.swift in Sources */,
 				FA0B2ADB266BD3240076B726 /* TableOperator+Delegates.swift in Sources */,
 				FAFAB92A265AF4F600FD7E10 /* HideDownBar.swift in Sources */,
 				FAB1422E2651B5E2002EB0AD /* Item+CoreDataProperties.swift in Sources */,
