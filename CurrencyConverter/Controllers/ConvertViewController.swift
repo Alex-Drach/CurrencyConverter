@@ -110,6 +110,7 @@ class ConvertViewController: UIViewController {
     /// - Parameters:
     ///     - state: - Indicates NetworkErrorView state.
     private func presentError(state: NetworkErrorView.State) {
+        animationOperator?.stopConnectionAnimation(success: false)
         let height: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 70.0 : 100.0
         let frame = CGRect(x: 0, y: 40, width: view.bounds.width, height: height)
         let errorView = NetworkErrorView(frame: frame, state: state)
@@ -127,13 +128,10 @@ extension ConvertViewController: NetworkOperatorDelegate {
             case .beganConnecting:
                 animationOperator?.startConnectionAnimation()
             case .connectionError:
-                animationOperator?.stopConnectionAnimation(success: false)
                 presentError(state: .connection)
             case .infoSupport:
-                animationOperator?.stopConnectionAnimation(success: false)
                 presentError(state: .api)
             case .serverDied:
-                animationOperator?.stopConnectionAnimation(success: false)
                 presentError(state: .server)
             case .finished:
                 animationOperator?.stopConnectionAnimation(success: true)
